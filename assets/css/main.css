@@ -55,6 +55,12 @@ p {
   line-height: 1.5;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 button {
   border: none;
   width: 100%;
@@ -62,15 +68,37 @@ button {
   padding: 0.5rem;
 }
 
+button:focus,
+button:active {
+  border: none;
+  outline: none;
+}
+
 img {
   max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reset-float {
+  display: block;
+  float: left;
+  width: 100%;
 }
 
 .cta-section {
   padding-top: 1.5rem;
 }
 
-.cta-section .cta {
+.show-tablet-up {
+  display: none;
+}
+
+.show-desktop-up {
+  display: none;
+}
+
+.cta {
   width: 4rem;
   margin: auto;
   display: block;
@@ -84,38 +112,109 @@ img {
   padding: 0 2rem;
 }
 
+.hero-image-container {
+  display: table;
+}
+
+.hero-image {
+  float: left;
+}
+
 .navigation-list {
-  /* margin: 0; */
-  padding: 0;
-  list-style-type: none;
+  border: 1px solid #d2cccc;
+  border-left: none;
+  border-right: none;
 }
 
 .navigation-list-item {
+  border-bottom: .25rem solid transparent;
+  box-sizing: border-box;
   display: inline-block;
-  padding: 0 1rem;
+  font-size: .8em;
+  letter-spacing: 0.125em;
+  padding: 1.5rem 1rem 1.25rem;
+  text-align: center;
 }
 
 .model-section {
-  padding: 2rem 4rem 0;
-  height: 20rem;
+  padding-top: 4rem;
+  height: 15rem;
 }
 
 .model-section-image {
   border: 1rem solid white;
   box-shadow: 0 0 1rem #d2cccc;
+  display: block;
+  margin: auto;
+  max-width: 20rem;
+  position: relative;
+  z-index: 9;
 }
 
 .navigation-section {
-  padding: 15rem 2rem 2rem;
+  padding: 12rem 2rem 2rem;
   background-color: rgb(203, 212, 232);
+  box-sizing: border-box;
 }
 
 @media (min-width: 700px) {
   body {
     font-size: 18px;
   }
+  .show-tablet-up {
+    display: initial;
+  }
 }
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  .navigation .navigation-list {
+    display: block;
+  }
+  .navigation-list-item {
+    width: calc(100%/6);
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+  }
+  .navigation-list-item:hover {
+    border-bottom: .25rem solid black;
+    cursor: pointer;
+  }
+  .main {
+    padding: 7rem 0;
+  }
+  .main-content-background {
+    background-color: rgb(203, 212, 232);
+    height: 30rem;
+  }
+  .model-section {
+    float: left;
+    padding: 0;
+    width: 50%;
+    height: initial;
+  }
+  .model-section-image {
+    margin-top: -5rem;
+    max-width: 30rem;
+  }
+  .navigation-section {
+    background-color: initial;
+    float: left;
+    padding-top: 7rem;
+    width: 50%;
+  }
+}
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .desktop-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: table;
+  }
+  .navigation-list {
+    border: none;
+  }
+  .show-desktop-up {
+    display: initial;
+  }
+}
