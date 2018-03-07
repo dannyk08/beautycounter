@@ -1,0 +1,1 @@
+# BeautyCounter Coding Challenge 

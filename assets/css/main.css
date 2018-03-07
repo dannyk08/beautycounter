@@ -10,6 +10,8 @@
 
 body {
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -50,10 +52,62 @@ a,
 p {
   font-family: 'Body font', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
+  line-height: 1.5;
+}
+
+button {
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
 }
 
 img {
-  max-width: 100%;;
+  max-width: 100%;
+}
+
+.cta-section {
+  padding-top: 1.5rem;
+}
+
+.cta-section .cta {
+  width: 4rem;
+  margin: auto;
+  display: block;
+  background-color: #536590;
+  color: white;
+  letter-spacing: 0.125em;
+}
+
+.hero-message {
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.navigation-list {
+  /* margin: 0; */
+  padding: 0;
+  list-style-type: none;
+}
+
+.navigation-list-item {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.model-section {
+  padding: 2rem 4rem 0;
+  height: 20rem;
+}
+
+.model-section-image {
+  border: 1rem solid white;
+  box-shadow: 0 0 1rem #d2cccc;
+}
+
+.navigation-section {
+  padding: 15rem 2rem 2rem;
+  background-color: rgb(203, 212, 232);
 }
 
 @media (min-width: 700px) {
@@ -61,3 +115,7 @@ img {
     font-size: 18px;
   }
 }
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
