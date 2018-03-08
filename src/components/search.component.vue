@@ -1,7 +1,8 @@
 <template>
   <main class="search-component">
     <form class="container search-form" @submit.prevent="handleSearch">
-        <h5>Search Character</h5>
+        <h4>Search Character</h4>
+        <hr class="header-underline">
       <div class="row input-block">
         <input class="eight columns flushed-input" v-on:input="debounceInput" type="text" placeholder="search">
         <input type="submit" :disabled="searchList.length" class="four columns flushed-submit" value="submit">
@@ -19,9 +20,9 @@
         </ul>
       </div>
     </form>
-    <section class="container search-results">
-      <div class="row character-info" v-if="Object.keys(character).length">
-        <h2>Name: {{character.name}}</h2>
+    <section class="container search-results"  v-if="Object.keys(character).length">
+      <div class="row character-info">
+        <h3>{{character.name}}</h3>
         <p>Gender: {{character.gender}}</p>
         <p>Hair Color: {{character.hair_color}}</p>
         <p>Skin Color: {{character.skin_color}}</p>
@@ -78,19 +79,38 @@ export default {
 
 <style scoped>
 .container {
-  padding: 1rem 0;
+  padding: 3rem 2rem 4rem;
+  background: white;
+  box-sizing: border-box;
+  opacity: 0.975;
 }
+.container + .container {
+  padding-top: 1rem;
+}
+
 .search-component {
-  padding: 2rem 0;
   text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+.header-underline {
+  width: 50%;
+  display: block;
+  border: 0.25rem solid black;
+  margin: 0 auto 2rem;
+}
+
 .flushed-input,
 .flushed-submit {
   margin-bottom: 0;
 }
+
 .search-list-results {
   /* padding: 1rem 0rem; */
 }
+
 .search-list-results-item {
   background-color: ghostwhite;
 
@@ -99,6 +119,10 @@ export default {
 }
 
 @media (min-width: 550px) {
+  .header-underline {
+    width: 35%;
+  }
+  
   .flushed-input {
     border-right: none;
     border-top-right-radius: 0;
@@ -120,4 +144,11 @@ export default {
     cursor: pointer;
   }
 }
+
+@media (min-width: 1000px) {
+  .header-underline {
+    width: 25%;
+  }
+}
+
 </style>
