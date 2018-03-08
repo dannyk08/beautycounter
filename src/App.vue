@@ -1,16 +1,42 @@
 <template>
   <div id="app">
-    <Search />
+    <div class="router-link">
+      <router-link :to="{name: routeName}">
+        <img class="router-link-image" :src="routeImage">
+      </router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Search from "./components/search.component";
-
 export default {
   name: "app",
-  components: {
-    Search
+  components: {},
+  data() {
+    return {
+      routeName: "LandingPage",
+      routeImage: "/images/search.jpg"
+    };
+  },
+  watch: {
+    $route(to) {
+      this.handleRoute(to.name);
+    }
+  },
+  mounted() {
+    this.handleRoute(this.$route.name);
+  },
+  methods: {
+    handleRoute(routeName) {
+      if (routeName === "LandingPage") {
+        this.routeName = "Search";
+        this.routeImage = "/images/search.jpg";
+      } else {
+        this.routeName = "LandingPage";
+        this.routeImage = "/images/beautycounter.jpg";
+      }
+    }
   }
 };
 </script>
@@ -22,18 +48,14 @@ body,
   height: 100%;
   float: left;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#app {
-  background-image: url(/images/stormtrooper-mobile.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  font-size: 16px;
 }
 
 ul {
@@ -42,9 +64,42 @@ ul {
   margin: 0;
 }
 
-@media (min-width: 1000px) {
-  #app {
-    background-image: url(/images/stormtrooper-desktop.jpg);
+.router-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.router-link a {
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+}
+
+.router-link-image {
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 750px) {
+  body {
+    font-size: 18px;
+  }
+
+  .router-link {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .router-link a {
+    display: block;
+    width: 5rem;
+    height: 5rem;
   }
 }
 </style>

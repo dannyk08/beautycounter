@@ -1,17 +1,75 @@
+<template>
+  <div class="landing-page-component">
+    <section class="reset-float hero">
+      <div class="cta-section desktop-grid">
+        <button class="cta">
+          <span>NEW</span>
+        </button>
+      </div>
+      <div class="hero-message desktop-grid">
+        <h1 class="hero-headline">Good Hair Days Start with Safer Ingredients</h1>
+        <p class="hero-sub">Formulated without sulfates, mineral oil, silicones, or synthetic fragances, our
+          <br class="show-tablet-up"> next generation hair care delivers high performance and safety.</p>
+      </div>
+      <div class="hero-image-container">
+        <img class="hero-image" src="/images/hero-mobile.jpg" srcset="/images/hero-mobile@2x.jpg" alt="Beatuy Counter Next Generation Products">
+      </div>
+    </section>
+    <nav class="reset-float navigation">
+      <ul class="navigation-list desktop-grid">
+        <li class="navigation-list-item">
+          <a>VOLUME & SHAPE</a>
+        </li>
+        <li class="navigation-list-item">
+          <a>SMOOTH & CONTROL</a>
+        </li>
+        <li class="navigation-list-item">
+          <a>REPAIR & NOURISH</a>
+        </li>
+        <li class="navigation-list-item">
+          <a>REVIEWS</a>
+        </li>
+        <li class="navigation-list-item">
+          <a>HOW-TO-VIDEOS</a>
+        </li>
+        <li class="navigation-list-item">
+          <a>INGREDIENTS</a>
+        </li>
+      </ul>
+    </nav>
+      <main class="reset-float main">
+        <section class="main-content-background">
+          <div class="main-content desktop-grid">
+            <section class="model-section">
+              <img class="model-section-image" src="/images/girl.jpg" srcset="/images/girl@2x.jpg" alt="Model Girl with great red hair">
+            </section>
+            <section class="navigation-section">
+              <h3>Volume & Shape</h3>
+              <hr class="header-shadow">
+              <p>Reveal beautiful body and enviable oomph with this collection for fine, flat hair featuring volumizing hibiscus
+                proteins. Safe for color treated hair.</p>
+            </section>
+          </div>
+        </section>
+      </main>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "LandingPage",
+};
+</script>
+
+<style scoped>
 @font-face {
-  font-family: 'Heading font';
-  src: url('/assets/fonts/heading-font.otf');
+  font-family: "Heading font";
+  src: url("/fonts/heading-font.otf");
 }
 
 @font-face {
-  font-family: 'Body font';
-  src: url('/assets/fonts/body-font.otf');
-}
-
-body {
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
+  font-family: "Body font";
+  src: url("/fonts/body-font.otf");
 }
 
 h1 {
@@ -44,13 +102,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Heading font', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "Heading font", Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
   font-weight: 100;
 }
 
 a,
 p {
-  font-family: 'Body font', Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Body font", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
   line-height: 1.5;
 }
@@ -88,7 +147,7 @@ img {
 
 .header-shadow {
   width: 4rem;
-  border: .125rem solid;
+  border: 0.125rem solid;
   text-align: left;
   display: inline-block;
   margin: 0 0 1rem;
@@ -138,10 +197,10 @@ img {
 }
 
 .navigation-list-item {
-  border-bottom: .25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
   box-sizing: border-box;
   display: inline-block;
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 0.125em;
   padding: 1.5rem 1rem 1.25rem;
   text-align: center;
@@ -188,7 +247,7 @@ img {
     float: left;
   }
   .navigation-list-item:hover {
-    border-bottom: .25rem solid black;
+    border-bottom: 0.25rem solid black;
     cursor: pointer;
   }
   .main {
@@ -229,3 +288,4 @@ img {
     display: initial;
   }
 }
+</style>
