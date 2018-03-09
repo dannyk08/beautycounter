@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <div class="router-link">
-      <router-link :to="{name: routeName}">
-        <img class="router-link-image" :src="routeImage">
-      </router-link>
+    <div class="portfolio-link">
+      <a href="https://dannys.io"></a>
+    </div>
+    <div class="router-link" :style="{'background-image': `url(${routeImage})`}">
+      <router-link :to="{name: routeName}"></router-link>
     </div>
     <router-view></router-view>
   </div>
@@ -64,19 +65,33 @@ ul {
   margin: 0;
 }
 
+.portfolio-link,
 .router-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.router-link a {
-  display: block;
-  width: 4.5rem;
+  position: fixed;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 4.5rem;
   overflow: hidden;
-  position: relative;
-  border-radius: 50%;
+  top: 0.5rem;
+  width: 4.5rem;
+}
+
+.router-link {
+  right: 0.5rem;
+}
+
+.portfolio-link {
+  left: 0.5rem;
+  background-image: url("/images/dannys_io-icon.jpg");
+}
+
+.portfolio-link a,
+.router-link a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .router-link-image {
@@ -91,15 +106,17 @@ ul {
     font-size: 18px;
   }
 
+  .portfolio-link,
   .router-link {
     top: 1rem;
-    right: 1rem;
   }
 
-  .router-link a {
-    display: block;
-    width: 5rem;
-    height: 5rem;
+  .portfolio-link {
+    left: 1rem;
+  }
+
+  .router-link {
+    right: 1rem;
   }
 }
 </style>
